@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>formation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <h2>Formation</h2>
+  <p></p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Annee debut</th>
+        <th>Annee fin</th>
+        <th>Niveau</th>
+        <th>Nom formation</th>
+        <th>Nom institut ou universite</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2018</td>
+        <td>2019</td>
+        <td>L3</td>
+        <td>Licence Genie informatique</td>
+        <td>Universite Virtuel de Senegal</td>
+      </tr>
+      <tr>
+        <td>2017</td>
+        <td>2018</td>
+        <td>L2</td>
+        <td>Licence Professionnelle en Genie informatique</td>
+        <td>Universite Gaston Berger</td>
+      </tr>
+      <tr>
+        <td>2016</td>
+        <td>2017</td>
+        <td>L1</td>
+        <td>Licence Professionnelle en Genie informatique</td>
+        <td>Universite Gaston Berger</td>
+      </tr>
+    </tbody>
+  </table>
+ </div>
+
+ <script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#table tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script>
+</body>
+</html>
